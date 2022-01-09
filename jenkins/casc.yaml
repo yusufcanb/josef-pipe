@@ -1,0 +1,52 @@
+jenkins:
+  numExecutors: 1
+  authorizationStrategy:
+    globalMatrix:
+      permissions:
+        - "Job/Build:dev"
+        - "Job/Cancel:dev"
+        - "Job/Read:dev"
+        - "Job/Workspace:dev"
+        - "Overall/Administer:admin"
+        - "Overall/Read:authenticated"
+        - "Run/Replay:dev"
+        - "Run/Update:dev"
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+        - id: ${JENKINS_ADMIN_ID}
+          password: ${JENKINS_ADMIN_PASSWORD}
+  disabledAdministrativeMonitors:
+  - "org.jenkinsci.plugins.matrixauth.AmbiguityMonitor"
+  - "jenkins.diagnostics.ControllerExecutorsNoAgents"
+  - "jenkins.diagnostics.RootUrlNotSetMonitor"
+  - "jenkins.security.QueueItemAuthenticatorMonitor"
+  - "jenkins.security.ResourceDomainRecommendation"
+  - "jenkins.security.s2m.MasterKillSwitchWarning"
+
+unclassified:
+  simple-theme-plugin:
+    elements:
+    - cssText:
+        text: |-
+          #jenkins-name-icon {
+              display: none;
+          }
+
+          .logo:after {
+              content: "Josef's Pipelines";
+              color: white;
+              font-family: sans-serif;
+              font-weight: 600;
+              margin-left: 25px;
+              margin-right: 12px;
+              line-height: 40px;
+          }
+  themeManager:
+    disableUserThemes: false
+    theme: "material-indigo"
+
+jobs:
+  - file: /opt/deploy/dsl/ansible.groovy
+  - file: /opt/deploy/dsl/rf.groovy

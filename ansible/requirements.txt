@@ -1,0 +1,4 @@
+ansible==4.0.0
+ansible-core==2.11.6
+ansible-lint==5.2.1
+ansible-later==1.4.0

@@ -1,0 +1,12 @@
+build-timeout:latest
+timestamper:latest
+pipeline-stage-view:latest
+material-theme:latest
+configuration-as-code:latest
+job-dsl:latest
+workflow-job:latest
+workflow-cps:latest
+workflow-aggregator:latest
+matrix-auth:latest
+htmlpublisher:latest
+simple-theme-plugin:latest
