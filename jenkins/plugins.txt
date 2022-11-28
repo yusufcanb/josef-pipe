@@ -10,3 +10,5 @@ workflow-aggregator:latest
 matrix-auth:latest
 htmlpublisher:latest
 simple-theme-plugin:latest
+dark-theme:262.v0202a_4c8fb_6a
+login-theme:1.1

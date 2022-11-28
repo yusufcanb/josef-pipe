@@ -4,7 +4,7 @@ pipeline {
      stages {
         stage('Stage 0 - Check Environment') {
             steps {
-                sh 'robot --outputdir output /opt/robots/watchdog.robot '
+                sh 'robot --outputdir output /opt/robots/watchdog.robot '                
                 sh 'mv output/log.html output/stage-0-logs.html'
                 archiveArtifacts artifacts: 'output/stage-0-logs.html'
             }
@@ -28,4 +28,3 @@ pipelineJob('Example Robot Pipeline') {
     }
   }
 }
-

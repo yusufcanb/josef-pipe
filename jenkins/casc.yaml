@@ -1,5 +1,5 @@
 jenkins:
-  numExecutors: 1
+  numExecutors: 4
   authorizationStrategy:
     globalMatrix:
       permissions:
@@ -26,26 +26,39 @@ jenkins:
   - "jenkins.security.s2m.MasterKillSwitchWarning"
 
 unclassified:
+  login-theme-plugin:
+    footer: |
+      <script>
+        var logEl = document.querySelector("#loginIntroDefault .logo img");
+        var titleEl = document.querySelector("#loginIntroDefault h1");
+        
+        logEl['src'] = 'https://upload.wikimedia.org/wikipedia/commons/e/e4/Robot-framework-logo.png'
+        titleEl.textContent = "Welcome to Josef's Pipelines"
+
+      </script>
   simple-theme-plugin:
     elements:
     - cssText:
         text: |-
-          #jenkins-name-icon {
-              display: none;
-          }
-
-          .logo:after {
-              content: "Josef's Pipelines";
-              color: white;
-              font-family: sans-serif;
-              font-weight: 600;
-              margin-left: 25px;
-              margin-right: 12px;
-              line-height: 40px;
-          }
+            .logo img {
+                content: url("/userContent/layout/logo.svg");
+            }
+            .logo:after {
+                content: "Josef's Pipelines";
+                color: white;
+                font-family: sans-serif;
+                font-weight: 600;
+                margin-left: 25px;
+                margin-right: 12px;
+                line-height: 40px;
+            }
+            #jenkins-name-icon {
+                display: none;
+            }
+          
   themeManager:
     disableUserThemes: false
-    theme: "material-indigo"
+    theme: "dark"
 
 jobs:
   - file: /opt/deploy/dsl/ansible.groovy
