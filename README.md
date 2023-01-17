@@ -15,8 +15,7 @@ It was inspired by the name of a PVC pipe brand (Fırat Boru), which is quite vi
 
 You can watch the viral ad from the link below; 
 
-[![](https://img.youtube.com/vi/87p-l32PR8s/0.jpg)](https://www.youtube.com/watch?v=87p-l32PR8s)
-
+[![](https://img.youtube.com/vi/qIAKrF_PhuI/0.jpg)](https://www.youtube.com/watch?v=qIAKrF_PhuI)
 
 ## Requirements
 
